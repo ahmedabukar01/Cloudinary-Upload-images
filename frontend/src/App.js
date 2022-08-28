@@ -16,11 +16,24 @@ function App() {
       setImage(reader.result)
     }
   }
+
+  // submit
+  const onSubmitFile = (e) =>{
+    e.preventDefault();
+    if(!image) return
+    uploadImage(image)
+
+  }
+
+  const uploadImage = (base) =>{
+    console.log(base);
+  }
   return (
     <div className="App">
       <h1>Hello</h1>
-      <form>
+      <form onSubmit={onSubmitFile}>
         <input type='file' name="image" value={file} onChange={onFileChange}/>
+        <button type='submit'>Submit </button>
       </form>
 
       <h2>Image</h2>
