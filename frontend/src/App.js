@@ -25,8 +25,18 @@ function App() {
 
   }
 
-  const uploadImage = (base) =>{
+  const uploadImage = async (base) =>{
     console.log(base);
+
+    try {
+      await fetch('api/upload', {
+        method: 'POST',
+        body: JSON.stringify({data: base}),
+        Headers: {'Content-type': 'application/json'},
+      });
+    } catch (error) {
+      console.log(error)
+    }
   }
   return (
     <div className="App">
