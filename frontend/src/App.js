@@ -1,5 +1,6 @@
 import {useState} from 'react'
 import './App.css';
+import UploadedImages from './UploadedImages';
 
 function App() {
   const [file,setFile] = useState('')
@@ -50,6 +51,9 @@ function App() {
       {image && (
         <img src={image} alt="myimage" style={{width: '300px'}}/>
       )}
+
+      <h2>uploaded images</h2>
+      <UploadedImages />
     </div>
   );
 }
