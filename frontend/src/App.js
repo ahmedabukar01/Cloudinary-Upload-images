@@ -29,7 +29,7 @@ function App() {
     console.log(base);
 
     try {
-      await fetch('api/upload', {
+      await fetch('http://localhost:5000/api/upload', {
         method: 'POST',
         body: JSON.stringify({data: base}),
         Headers: {'Content-type': 'application/json'},
