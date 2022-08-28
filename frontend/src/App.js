@@ -25,14 +25,14 @@ function App() {
 
   }
 
-  const uploadImage = async (base) =>{
-    console.log(base);
+  const uploadImage = async (img) =>{
+    console.log(img);
 
     try {
       await fetch('http://localhost:5000/api/upload', {
         method: 'POST',
-        body: JSON.stringify({data: base}),
-        Headers: {'Content-type': 'application/json'},
+        body: JSON.stringify({img}),
+        headers: {'Content-type': 'application/json'},
       });
     } catch (error) {
       console.log(error)
